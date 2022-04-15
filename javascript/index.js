@@ -1,59 +1,69 @@
 
 
-//func and return defined
 
+//objects
 
-const squarearea=function(a){
-	let area=a**2;
-	//console.log(area);
-	//return area;
+let student={
+	name:"can",
+	age:20,
+	email:"adfg@gmail.com",
+	lessons:[
+	{ad:"music",score:90},
+	{ad:"mat",score:80},
+	{ad:"art",score:85}],
 
-    return a**2;
-};
+	login:function(){
+		console.log("giriş yapıldı");
+	},
+	logout:function(){
+		console.log("çıkış yapıldı");
+	},
+	printLessons(){
+		console.log(this.lessons);
 
-const sonuc1=squarearea(6);
+		this.lesson.forEach(lesson=>{
 
-console.log(sonuc1);
+			console.log(lesson.ad,lesson.score);
+		})
 
+		}
 
-// arrow function defined
-
-const squarearea=(a)=>return a**2;
 	
-const sonuc=squarearea(6);
-
-console.log(sonuc);
-
-//example-arrow func
-
-const fatura=(products,vergi)=>{
-
-	let toplam=0;
-	for(let i=0;i<products.lenght;i++){
-		 toplam += products[i]+products[i]*vergi;
-
-	};
-	return toplam;
-
 };
 
-console.log(fatura([10,20,30],0.25));
+student.printLessons();
+
+student.login(); 
+
+console.log(student);
+
+console.log(student.age);
+
+student.age=22;
+console.log(student.age); //new age property
+
+console.log(typeof student);
+
+//----------------math objects
 
 
-//methods
+console.log(Math);
 
-const ad="can";
-
-let sonuc1=ad.toUpperCase();
-
-console.log(sonuc1);
+console.log(Math.PI);
 
 
-//forEach
+let a=6.3;
 
-let students=["hakan","fatma","ufuk","ceren"];
+console.log(Math.round(a)); //yuvarlama işlemi yapar,yani sayı en çok nereye yakın.. a=6
 
-students.forEach(function(person,index){
-	console.log("Selam"+person+" "+index)
-});
+console.log(Math.floor(a)); //1 alt sayıya yuvarlar.. a=6
 
+console.log(Math.cell(a)); //1 üstte yuvarlar... a=7
+
+console.log(Math.trunc(a)); // decimal kısmı kaldırır.. a=6
+
+const random=Math.random();
+
+console.log(random); //sayfa her yenilendiğinde farklı bi sayıya atanır.
+
+console.log(Math.round(random));
